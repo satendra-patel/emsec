@@ -7,7 +7,7 @@
     "start": "node server",
     "dev": "nodemon server"
   },
-  "author": "theHeartCoder",
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
