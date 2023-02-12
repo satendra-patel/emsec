@@ -25,4 +25,14 @@ app.get('/', (req, res) => {
     res.send('API is running good')
 })
 
+app.get("/api/task/:pageNumber", (req, res) => {
+    const pageSize = 10;
+    Task.find({})
+      .skip((req.params.pageNumber - 1) * pageSize)
+      .limit(pageSize)
+      .then(task => {
+        res.send(task);
+      });
+  });
+
 app.listen(PORT, console.log(`Server is running on port ${PORT}`.yellow.bold));
